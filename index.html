@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Legends</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para el slider */
+        .slider {
+            width: 450%;
+            height: 500px; /* Ajusta la altura del slider */
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 0px; /* Espacio entre cabecera y contenido principal */
+        }
+
+        .slides {
+            display: flex;
+            width: 500%; /* 100% por cada imagen */
+            height: 100%;
+            animation: slide 12s infinite;
+        }
+
+        .slides img {
+            width: 100%; /* Ocupa todo el ancho de la cabecera */
+            height: 100%;
+            object-fit: cover; /* Mantén la proporción de la imagen */
+        }
+
+        @keyframes slide {
+            0% { margin-left: 0%; }
+            20% { margin-left: 0%; }
+            25% { margin-left: -100%; }
+            45% { margin-left: -100%; }
+            50% { margin-left: -200%; }
+            70% { margin-left: -200%; }
+            75% { margin-left: -300%; }
+            95% { margin-left: -300%; }
+            100% { margin-left: 0%; }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="cabecera">
+        <!-- Slider en la cabecera -->
+        <div class="slider">
+            <div class="slides">
+                <img src="https://i.pinimg.com/564x/6e/5c/a5/6e5ca5f91831fe4ea4cf09876e64e470.jpg" alt="Imagen 1">
+                <img src="https://i.pinimg.com/564x/71/59/16/715916aff4ea9cb9cb317d2079c16a3d.jpg" alt="Imagen 2">
+                <img src="https://i.pinimg.com/564x/73/49/d8/7349d8b0b2cc35571c0f65328a3d956a.jpg" alt="Imagen 3">
+                <img src="https://i.pinimg.com/564x/b7/bb/19/b7bb194272a08421d0d407aa9c33e4fd.jpg" alt="Imagen 4">
+                <img src="https://i.pinimg.com/736x/7a/82/be/7a82be665622042390f2e09f3ba431cd.jpg" alt="imagen 5">
+            </div>
+        </div>
+    </header>
+
+    <nav class="barra-de-navegacion">
+        <ul>
+            <li><a href="https://m.mobilelegends.com/">Inicio</a></li>
+            <li><a href="file:///C:/Users/Usuario/Desktop/pagina%20web/acerca-de.html" target="_blank">Acerca De</a></li>
+            <li><a href="https://m.mobilelegends.com/news/articleldetail?newsid=2744453">Servicios</a></li>
+            <li><a href="https://www.instagram.com/mlbblatam?utm_source=ig_web_button_share_sheet&igshid=ZDNlZDc0MzIxNw" target="_blank">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="informacion-principal">
+        <section>
+            <h1>Información Principal</h1>
+            <p>Mobile Legends: Bang Bang es el juego de Arena de Batalla Multijugador en Línea (MOBA) móvil más popular a nivel mundial que reúne a comunidades a través del trabajo en equipo y estrategia. Con más de 1.465 millones de descargas y 110 millones de usuarios activos mensuales, el galardonado juego se encuentra entre los 10 más jugados en más de 80 países. Con un alcance extenso en la región de Asia Pacífico, el juego está disponible en 139 países, contando con una gran presencia global en los sports.</p>
+        </section>
+        <aside class="barra-lateral">
+            <h2>Barra Lateral</h2>
+            <div class="contenedor-imagen">
+                <img src="https://i.pinimg.com/564x/6e/e2/7b/6ee27b5a8f25d505670250cda358ea72.jpg" alt="Imagen de Ejemplo">
+                <div class="enlaces-sobre-imagen">
+                    <a href="https://m.mobilelegends.com/rank">Rank De Personajes</a>
+                    <a href="https://m.mobilelegends.com/doujin">Fan Art</a>
+                </div>
+            </div>
+        </aside>
+        
+    </main>
+
+    <footer class="institucional">
+        <p>Información Institucional</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slides img').length;
+            currentSlide = (index + totalSlides) % totalSlides; // Asegura que el índice esté dentro del rango
+            slides.style.marginLeft = `-${currentSlide * 100}%`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+    </script>
+</body>
+</html>
